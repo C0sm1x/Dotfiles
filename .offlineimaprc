@@ -1,0 +1,21 @@
+# Sample minimal config file.  Copy this to ~/.offlineimaprc and edit to
+# get started fast.
+
+<li>[general]</li>
+accounts = Gmail
+starttls = yes
+ssl = yes
+
+[Account Gmail]
+localrepository = gmail-local
+remoterepository = gmail-remote
+
+[Repository gmail-local]
+type = Maildir
+localfolders = ~/.Mail/gmail
+
+[Repository gmail-remote]
+type = Gmail
+remoteuser = email
+remotepass = password
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt

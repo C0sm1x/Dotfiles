@@ -1,0 +1,30 @@
+[global_config]
+  borderless = True
+  tab_position = hidden
+  title_font = Hack 20
+  title_inactive_fg_color = "#262626"
+  title_transmit_fg_color = "#b3c9d7"
+  title_use_system_font = False
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#262626"
+    cursor_color = "#ffffff"
+    cursor_color_fg = False
+    font = Hack 20
+    foreground_color = "#b3c9d7"
+    icon_bell = False
+    palette = "#191919:#ff355b:#b7e876:#ffc251:#76d4ff:#ba76e7:#06989a:#d3d7cf:#191919:#ff355b:#b7e876:#ffc251:#76d4ff:#ba76e7:#34e2e2:#eeeeec"
+    scrollback_lines = 1000
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False

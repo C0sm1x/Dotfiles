@@ -1,0 +1,50 @@
+delete Arch-Linux-Wallpaper-Download-PC\ \(copy\).png
+delete image.png
+delete sent
+delete text
+delete email
+delete polybar.log
+cd /home/anthony/Pictures/Wallpapers/Titans
+shell ls
+shell cd /
+shell pwd
+shell echo %f
+set colorscheme snow
+set colorscheme solarized
+cd Documents/PDFs
+search pictur
+search pictu
+cd /home/anthony/Pictures/Wallpapers
+search Pic
+delete config-test/
+search pi
+search Pi
+search pict
+search pic
+rename
+rename Math-085
+find
+find w
+search progr
+deletedDd
+help
+touch qt-tut
+python3 qt-tut.py
+e nvim
+e %f nvim
+nvim %f
+e nvim %f
+rename qt-tut.py
+rename qt-tut1.py
+e qt-tut2.py
+edit qt-tut4.py
+edit qt-tut5.py
+find kjqqqj
+rename Solarized.png
+cd .local/
+rename blurme
+cd .local/share/
+search blurme
+open_with 
+
+delete

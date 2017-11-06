@@ -1,0 +1,44 @@
+#include </home/anthony/.cache/wal/colors.Xresources>
+#include </home/anthony/.Xresources-st>
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+! rofi.color-enabled: true
+! rofi.color-window: #2e3440, #50fa7b, #50fa7b
+! rofi.color-normal: #2e3440, #ffffff, #2e3440, #4f5662, #ffffff
+! rofi.color-active: #6f7884, #ffffff, #6f7884, #4f5662, #ffffff
+! rofi.color-urgent: #ff443e, #ffffff, #ff443e, #ff443e, #ffffff
+
+! Cursor size
+Xcursor.size: 64
+! END
+
+! URxvt config
+URxvt*font:  xft:Hack:size=20:antialias=true,xft:inconsolata:size=20:antialias=true,xft:DejaVu Sans:size=18:antialias=true,xft:Sauce Code Powerline:antialias=true:hinting=true:size=20
+! URxvt.letterSpace: -1
+
+URxvt*scrollBar: false
+
+! URxvt*foreground: white
+
+! URxvt*depth: 32
+! URxvt*background: rgba:0000/0000/0200/c800
+! Perl Extensions
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.url-select.launcher:  firefox
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+
+! END
+
+! Dzen2
+
+! dzen2.font:       -*-font-medium-*-*-*-*-*-*-*-*-*-*-*-*
+! dzen2.foreground: #A1B0B8
+! dzen2.background: #252525
+
+! END

@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/usr/share/X11/xorg.conf.d'
+let g:netrw_dirhist_2='/usr/share/applications'
+let g:netrw_dirhist_3='/home/anthony/.mozilla/firefox/mwad0hks.default'
+let g:netrw_dirhist_4='/home/anthony/Python'
+let g:netrw_dirhist_5='/home/anthony/uncompressed_junk/1d_accuweather_rss/1d_README_INFO'
+let g:netrw_dirhist_6='/etc/X11/xinit/xinitrc.d'
+let g:netrw_dirhist_7='/etc/X11/xinit'
+let g:netrw_dirhist_8='/home/anthony/.config/polybar'

@@ -1,0 +1,41 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #252525, #252525, #252525
+rofi.color-normal: #151515, #a1b0b8, #151515, #303030, #c3d2da
+rofi.color-active: #f5f5f5, #252525, #ffc135, #e5e5e5, #000000
+rofi.color-urgent: #ff443e, #f5f5f5, #ff443e, #ff775f, #f5f5f5
+
+! Cursor size
+Xcursor.size: 64
+! END
+
+! URxvt config
+URxvt.font: xft:monospace:size=18
+
+URxvt*scrollBar: false
+
+URxvt*foreground: white
+
+URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0200/c800
+! Perl Extensions
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.url-select.launcher:  firefox
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+
+! END
+
+! Dzen2
+
+dzen2.font:       -*-font-medium-*-*-*-*-*-*-*-*-*-*-*-*
+dzen2.foreground: #A1B0B8
+dzen2.background: #252525
+
+! END
