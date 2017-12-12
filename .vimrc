@@ -3,10 +3,10 @@ syntax on
 " colo bluez
 " colo bocau
 " colo jellybeans
-" colo candycode
-colo janah
+colo candycode
+" colo janah
 filetype plugin on
-filetype indent off
+filetype indent on
 set autoindent
 set shiftwidth=4
 set expandtab
@@ -18,6 +18,7 @@ set hlsearch
 set incsearch
 set lazyredraw
 set showmatch
+set matchtime=3
 set mat=2
 set encoding=utf8
 set bg=dark
@@ -31,6 +32,17 @@ set termguicolors
 set background=dark
 set cmdheight=1
 set shortmess=a
+set scrolloff=0
+set visualbell
+set history=1000
+set undolevels=10000
+" Set vim to save the file on focus out.
+au FocusLost * :wa
+" Redraw screen every time when focus gained
+au FocusGained * :redraw!
+" Working with split screen nicely
+" Resize Split When the window is resized"
+au VimResized * :wincmd =
 
 " Highlight line the cursor is on
 hi CursorLine   cterm=NONE ctermbg=234 ctermfg=black guibg=darkred guifg=white
@@ -83,6 +95,19 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'ying17zi/vim-live-latex-preview'
 Plugin 'file:///home/anthony/Instantly_Better_Vim_2013/plugin/dragvisuals'
 Plugin 'junegunn/goyo.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'pangloss/vim-javascript'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'ervandew/supertab'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'rust-lang/rust.vim'
+Plugin 'jacquesbh/vim-showmarks'
+Plugin 'majutsushi/tagbar'
+Plugin 'gregsexton/MatchTag'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -112,7 +137,7 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 "NERDTree
 
 let g:NERDTreeChDirMode = 2
-
+let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$']
 "==============================
 
 " Syntastic
@@ -153,6 +178,7 @@ let g:airline#extensions#tabline#show_close_button = 0
 
 let g:airline#extensions#whitespace#enabled = 0
 
+"==============================
 
     " This rewires n and N to do the highlighing...
     nnoremap <silent> n   n:call HLNext(0.4)<cr>
@@ -190,15 +216,65 @@ vmap  <expr>  D        DVB_Duplicate()
 let g:DVB_TrimWS = 1
 
 "==============================
+"
+" tagbar
+ let g:tagbar_type_rust = {
+    \ 'ctagstype' : 'rust',
+    \ 'kinds' : [
+        \'T:types,type definitions',
+        \'f:functions,function definitions',
+        \'g:enum,enumeration names',
+        \'s:structure names',
+        \'m:modules,module names',
+        \'c:consts,static constants',
+        \'t:traits',
+        \'i:impls,trait implementations',
+    \]
+    \}
+
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
+"
+"==============================
 
 " Key mapping
 
 let mapleader = ","
 let g:mapleader = ","
-noremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>tn :tnext<cr>
+nnoremap <leader>tN :tprev<cr>
+nnoremap <leader>tj :tjump<cr>
+nmap <leader>tb :TagbarToggle<CR>
+noremap <leader>n :NERDTreeToggle .<CR>
 noremap <leader>t :NERDTreeFocus<CR>
 noremap <silent> <leader>f :FixWhitespace<CR>
 nmap <silent> <F2> :set spell!<CR>
+noremap <silent> <leader>m :ShowMarksOnce<CR>
 nnoremap <leader>cpp :-1read $HOME/Templates/C++/C++_Template.cpp<CR>6j
 nnoremap <leader>html :-1read $HOME/Templates/HTML/HTML_Template.html<CR>17j
 nnoremap <leader>c :-1read $HOME/Templates/C/C_Template.c<CR>4j
@@ -207,7 +283,7 @@ nnoremap <leader>tex :-1read $HOME/Templates/LaTex/LaTex_Template.tex<CR>4j
 nnoremap <leader>w <C-w>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>x :x<CR>
-nnoremap <leader>q :q
+nnoremap <leader>q :q<CR>
 " Navigate to \"<++>"
 inoremap <Tab><Tab> <Esc>/<++><CR>"_c4l
 nnoremap nt :tabnew<CR>
@@ -295,13 +371,26 @@ autocmd Filetype c inoremap <leader>if if (<++>)<CR>{<CR>}<Esc>O<Esc>o<Esc>i    
 
 "END
 
-"If a double quote, single quote, or parenthesis is pressed
-
-inoremap "" ""<Esc>i
-inoremap '' ''<Esc>i
-inoremap () ()<Esc>i
-
 "  C/C++ Enhaced
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_concepts_highlight = 1
+
+" Make Sure that Vim returns to the same line when we reopen a file"
+augroup line_return
+    au!
+    au BufReadPost *
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \ execute 'normal! g`"zvzz' |
+                \ endif
+augroup END
+
+" Commandsk
+
+" ==============================
+
+" Force Saving Files that Require Root Permission
+
+" command! Sudowrite w !sudo tee % > /dev/null
+
+" ==============================

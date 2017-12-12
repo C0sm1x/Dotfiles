@@ -9,15 +9,15 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 #variables
-set $bg-color 	         #000000
-set $inactive-bg-color   #222222
-set $text-color          ${xrdb:color7}
-set $inactive-text-color ${xrdb:color6}
-set $urgent-bg-color #ff0000
+set $bg-color 	         #121212
+set $inactive-bg-color   #000000
+set $text-color          #ffffff
+set $inactive-text-color #222222
+set $urgent-bg-color #2f0000
 
 # set $term urxvt
 set $term terminator
-set $browser waterfox
+set $browser firefox
 
 # Navigations keys
 set $up k
@@ -231,7 +231,7 @@ bindsym $mod+shift+u exec ~/scripts/flash_win.sh
 bindsym $mod+Shift+c exec $term -e qalc
 
 #Check Mail
-exec ~/scripts/CheckMail.sh &
+# exec ~/scripts/CheckMail.sh &
 
 #Start Dunst
 exec_always ~/scripts/Launch_Dunst.sh &
@@ -242,6 +242,10 @@ exec_always ~/scripts/Launch_Dunst.sh &
 
 #Start redshift
 exec redshift &
+
+#Kdeconnect
+exec --no-startup-id /usr/lib/kdeconnectd
+exec --no-startup-id kdeconnect-indicator
 
 #i3-gaps
 gaps outer 5
@@ -258,3 +262,8 @@ bindsym $mod+Shift+t gaps outer all set 5
 bindsym $mod+n gaps inner all set 0
 bindsym $mod+Shift+n gaps outer all set 0
 
+# Floating windows
+for_window [class="Godot"] floating enable
+for_window [window_role="gimp-dock"] floating disable; move left; resize shrink width 50 px or 50ppt
+for_window [window_role="gimp-toolbox"] floating disable; move right; resize grow width 30 px or 30ppt
+for_window [class="GeoGebra"] floating enable

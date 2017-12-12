@@ -19,20 +19,32 @@ margin-left = 0
 [colors]
 #foreground = ${xrdb:color7}
 #background = ${xrdb:color0}
+#main-bar-transparent-background = #00000000
+#main-bar-background             = #262626
+#gray = #474747
+#black = #101010
+#red = #FF443E
+#blue = #42A5F5
+#yellow = #FFC135
+#green = #CD382C
+#foreground = #FFFFFF
+
 main-bar-transparent-background = #00000000
-main-bar-background             = #262626
+main-bar-background             = #121212
 gray = #474747
 black = #101010
 red = #FF443E
 blue = #42A5F5
 yellow = #FFC135
-green = #CD382C
+green = #00a100
 foreground = #FFFFFF
+unfocused = #121212
+focused = #222222
 
 [i3_settings]
-focused_background   = #39393A
-unfocused_background = #262626
-unfocused_alert      = #F4511E
+focused_background   = ${colors.focused}
+unfocused_background = ${colors.unfocused}
+unfocused_alert      = ${colors.red}
 
 padding = 1.5
 
@@ -279,7 +291,8 @@ format-connected = <label-connected>
 format-connected-underline = ${colors.foreground}
 format-disconnected-underline = ${colors.gray}
 
-label-connected = %essid%
+# label-connected = %essid%
+label-connected =
 label-disconnected = 
 label-disconnected-foreground = ${colors.gray}
 
