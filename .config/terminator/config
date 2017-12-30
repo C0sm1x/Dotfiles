@@ -19,7 +19,7 @@
 [plugins]
 [profiles]
   [[default]]
-    background_darkness = 0.84
+    background_darkness = 0.8
     background_type = transparent
     cursor_color = "#aaaaaa"
     cursor_color_fg = False
@@ -34,7 +34,7 @@
     background_color = "#262626"
     cursor_color = "#ffffff"
     cursor_color_fg = False
-    font = Hack 12
+    font = Hack 16
     foreground_color = "#b3c9d7"
     icon_bell = False
     palette = "#191919:#ff355b:#b7e876:#ffc251:#76d4ff:#ba76e7:#06989a:#d3d7cf:#191919:#ff355b:#b7e876:#ffc251:#76d4ff:#ba76e7:#34e2e2:#eeeeec"

@@ -15,8 +15,7 @@ set $text-color          #ffffff
 set $inactive-text-color #222222
 set $urgent-bg-color #2f0000
 
-# set $term urxvt
-set $term terminator
+set $term urxvt
 set $browser firefox
 
 # Navigations keys
@@ -63,7 +62,8 @@ bindsym $mod+shift+s sticky toggle
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 #start rofi
-bindsym $mod+d exec rofi -show drun -config ~/.config/rofi/config
+# bindsym $mod+d exec rofi -show run -config ~/.config/rofi/config
+bindsym $mod+d exec rofi -show run
 
 # change focus
 bindsym $mod+$left focus left
@@ -244,8 +244,8 @@ exec_always ~/scripts/Launch_Dunst.sh &
 exec redshift &
 
 #Kdeconnect
-exec --no-startup-id /usr/lib/kdeconnectd
-exec --no-startup-id kdeconnect-indicator
+# exec --no-startup-id /usr/lib/kdeconnectd
+# exec --no-startup-id kdeconnect-indicator
 
 #i3-gaps
 gaps outer 5

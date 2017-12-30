@@ -17,9 +17,9 @@ zle -N down-line-or-beginning-search
 #ZSH_THEME="jonathan"
 #ZSH_THEME="bira"
 #ZSH_THEME=nicoulaj
-#ZSH_THEME=green_theme
+ZSH_THEME=green_theme
 #ZSH_THEME=bira
-ZSH_THEME="spaceship"
+#ZSH_THEME="spaceship"
 
 # Colors
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
@@ -182,6 +182,5 @@ export XDG_CONFIG_HOME=$HOME/.config/
 # Aliases
 alias open="xdg-open"
 alias wcache="wget -m -k -K -E"
-alias vim="nvim"
 
 # (wal -r &)

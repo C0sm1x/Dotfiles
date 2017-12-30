@@ -3,8 +3,9 @@ syntax on
 " colo bluez
 " colo bocau
 " colo jellybeans
-colo candycode
+" colo candycode
 " colo janah
+colo wal
 filetype plugin on
 filetype indent on
 set autoindent
@@ -28,7 +29,7 @@ set laststatus=0
 " set t_Co=256
 set t_ut=" "
 set ut=250
-set termguicolors
+" set termguicolors
 set background=dark
 set cmdheight=1
 set shortmess=a
